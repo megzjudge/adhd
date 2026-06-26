@@ -30,18 +30,10 @@ Matches the adhdprep DIVA-5 self-check report:
 ## Your files
 
 Placed in `images/`:
-- `diva_5_assessment_report_2026-06-26.pdf` — your self-check report (linked on the walkthrough page)
-- `DIVA_Diagnostic_Interview_for_ADHD_2.pdf` — your completed interview (linked on the walkthrough page)
+- `diva_5_assessment_report_2026-06-26.pdf` — site owner's self-check report (linked on the walkthrough page)
 
 The walkthrough narrative (`walkthrough-data.js`) is built from your written answers, mapped to the
 criterion each one belongs to. Edit or trim freely — it's your own account and entirely optional.
-
-## ⚠️ One file you need to add
-
-I couldn't pull the blank instrument binary into the build, so drop your local copy at:
-`images/DIVA_Diagnostic_Interview_for_ADHD.pdf`
-(It's the OHSU-hosted DIVA PDF you referenced. The download buttons on the About and Results pages
-already point to that path.)
 
 ## Not a diagnosis
 
