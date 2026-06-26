@@ -1,9 +1,9 @@
 # DIVA-5 — Adult ADHD site
 
-A three-page site built around the **DIVA-5** (Diagnostic Interview for ADHD in Adults),
-themed to match the original layout. It explains the DIVA, sends people to a free online
-self-check to take it, and interprets the score. The test is **not hosted here** — visitors
-go offsite to take it, so responses aren't collected by this site.
+A three-page site built around the **DIVA-5** (Diagnostic Interview for ADHD in Adults).
+It explains the DIVA, sends people to a free online self-check to take it, and interprets
+the score. The test is **not hosted here** — visitors go offsite to take it, so responses
+aren't collected by this site.
 
 ## Pages
 
