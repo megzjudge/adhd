@@ -3,13 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Interpret My Results — ASRS v1.1</title>
-  <meta name="description" content="Enter your ASRS v1.1 Part A and Part B scores to see what they mean against the established adult ADHD screening thresholds." />
+  <title>Interpret My Results — DIVA-5 Self-Check</title>
+  <meta name="description" content="Enter your DIVA-5 self-check score and category averages to see what they mean." />
   <meta name="robots" content="index, follow" />
   <meta name="theme-color" content="#f7f5f0" />
   <meta property="og:type" content="website" />
-  <meta property="og:locale" content="en_US" />
-  <meta property="og:title" content="Interpret My Results — ASRS v1.1" />
+  <meta property="og:title" content="Interpret My Results — DIVA-5 Self-Check" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet" />
@@ -19,11 +18,12 @@
 <body>
   <header class="site-header">
     <div class="container header-inner">
-      <a href="index.html" class="logo">ASRS&nbsp;v1.1 Screener</a>
+      <a href="index.html" class="logo">DIVA&#8209;5 · Adult ADHD</a>
       <nav class="nav">
         <a href="index.html" class="nav-link">About</a>
-        <a href="https://psychology-tools.com/adult-adhd-self-report-scale/" class="nav-link" target="_blank" rel="noopener">Take the Test ↗</a>
+        <a href="https://www.adhdprep.com/screeners/diva-5" class="nav-link" target="_blank" rel="noopener">Take the Self-Check ↗</a>
         <a href="results.html" class="nav-link active">Interpret My Results</a>
+        <a href="walkthrough.html" class="nav-link">Example Walkthrough</a>
       </nav>
     </div>
   </header>
@@ -31,37 +31,44 @@
   <main class="container-wide">
     <div class="results-header">
       <h1>Interpret Your Results</h1>
-      <p>Already took the <a href="https://psychology-tools.com/adult-adhd-self-report-scale/" target="_blank" rel="noopener">official ASRS v1.1 screener</a>? Enter your Part A and Part B scores to see what they mean against the established thresholds.</p>
+      <p>Took the <a href="https://www.adhdprep.com/screeners/diva-5" target="_blank" rel="noopener">free DIVA-5 self-check</a>? Enter the total and the three category averages from your report to see what they mean.</p>
     </div>
 
     <div class="disclaimer-box">
-      <strong>This is a screening aid, not a diagnosis.</strong> A positive result means it may be
-      worth talking to a qualified clinician — only a full evaluation can confirm or rule out ADHD.
+      <strong>This is a self-check, not a diagnosis.</strong> Being above the threshold means it may
+      be worth a full assessment with a qualified clinician — it doesn't confirm ADHD on its own.
     </div>
 
     <section class="score-entry-section">
       <h2>Enter your scores</h2>
       <form id="score-form" class="score-entry-form">
-        <div class="score-entry-fields">
+        <div class="score-input-group score-input-wide">
+          <label for="input-total">Total score (0–72) <span style="font-weight:400">· required</span></label>
+          <input type="number" id="input-total" min="0" max="72" step="1" placeholder="e.g. 53" required>
+        </div>
+        <p class="form-subhead">Category averages (0–4 each) — optional, but they power your profile:</p>
+        <div class="score-entry-fields-3">
           <div class="score-input-group">
-            <label for="input-partA">Part A score (0–24)</label>
-            <input type="number" id="input-partA" min="0" max="24" step="1" placeholder="e.g. 15" required>
+            <label for="input-inatt">Inattention</label>
+            <input type="number" id="input-inatt" min="0" max="4" step="0.01" placeholder="e.g. 2.89">
           </div>
           <div class="score-input-group">
-            <label for="input-partB">Part B score (0–48)</label>
-            <input type="number" id="input-partB" min="0" max="48" step="1" placeholder="e.g. 29" required>
+            <label for="input-hyper">Hyperactivity</label>
+            <input type="number" id="input-hyper" min="0" max="4" step="0.01" placeholder="e.g. 2.40">
+          </div>
+          <div class="score-input-group">
+            <label for="input-impul">Impulsivity</label>
+            <input type="number" id="input-impul" min="0" max="4" step="0.01" placeholder="e.g. 3.75">
           </div>
         </div>
-        <p class="computed-total" id="computed-total">Total: <strong>—</strong> / 72</p>
         <div class="score-entry-actions">
           <button type="submit" class="btn btn-primary">Interpret My Score</button>
           <button type="button" class="btn btn-secondary" id="clear-results-btn">Clear</button>
         </div>
       </form>
       <p class="score-entry-hint">
-        Your scores appear as <strong>Your Result</strong> (blue). <strong>My Result</strong>
-        (olive) stays on the chart as a comparison. <strong>Part A</strong> is the part that decides
-        the screen; <strong>Part B</strong> adds to your total.
+        Your numbers appear as <strong>Your Result</strong> (blue). <strong>My Result</strong> (olive)
+        stays on the charts as a comparison.
       </p>
     </section>
 
@@ -71,68 +78,62 @@
       <div class="score-card score-card-my">
         <div class="label">My Result</div>
         <div class="score-pair">
-          <div><span class="score-dim">Part A</span> <span class="value" id="score-my-partA">—</span></div>
-          <div><span class="score-dim">Part B</span> <span class="value" id="score-my-partB">—</span></div>
           <div><span class="score-dim">Total</span> <span class="value" id="score-my-total">—</span></div>
+          <div><span class="score-dim">Inatt.</span> <span class="value" id="score-my-inatt">—</span></div>
+          <div><span class="score-dim">Hyper.</span> <span class="value" id="score-my-hyper">—</span></div>
+          <div><span class="score-dim">Impul.</span> <span class="value" id="score-my-impul">—</span></div>
         </div>
-        <div class="range">Comparison shown on the chart</div>
+        <div class="range">Comparison shown on the charts</div>
       </div>
       <div class="score-card" id="visitor-score-card">
         <div class="label">Your Result</div>
         <div class="score-pair">
-          <div><span class="score-dim">Part A</span> <span class="value" id="score-visitor-partA">—</span></div>
-          <div><span class="score-dim">Part B</span> <span class="value" id="score-visitor-partB">—</span></div>
           <div><span class="score-dim">Total</span> <span class="value" id="score-visitor-total">—</span></div>
+          <div><span class="score-dim">Inatt.</span> <span class="value" id="score-visitor-inatt">—</span></div>
+          <div><span class="score-dim">Hyper.</span> <span class="value" id="score-visitor-hyper">—</span></div>
+          <div><span class="score-dim">Impul.</span> <span class="value" id="score-visitor-impul">—</span></div>
         </div>
-        <div class="range">From your screener scores</div>
+        <div class="range">From your self-check report</div>
       </div>
     </div>
 
     <section class="chart-section">
-      <h2>Part A score vs the positive-screen cutoff</h2>
-      <p class="subtitle">Part A (0–24) is the part that decides the screen. The dashed line marks the positive-screen cutoff of 14.</p>
-      <div class="chart-wrap" style="height: 280px;">
-        <canvas id="partA-chart"></canvas>
+      <h2>Total score vs the self-check threshold</h2>
+      <p class="subtitle">The self-check sums 18 items (0–4 each) to a total out of 72. The dashed line marks the threshold of 24.</p>
+      <div class="chart-wrap" style="height: 260px;">
+        <canvas id="total-chart"></canvas>
       </div>
-      <p class="chart-source-note">Cutoff of 14/24 on the Part A sum follows the Harvard/WHO scoring guidance for the ASRS v1.1.</p>
+      <p class="chart-source-note">A total at or above 24 is flagged as "above threshold" by the self-check.</p>
     </section>
 
     <section class="chart-section">
-      <h2>Part A + Part B = your total</h2>
-      <p class="subtitle">How your two scores stack into the full-scale total (0–72), next to My Result.</p>
-      <div class="chart-wrap" style="height: 260px;">
-        <canvas id="stack-chart"></canvas>
+      <h2>Your symptom profile</h2>
+      <p class="subtitle">Average intensity (0–4) across the three symptom clusters — this shows which cluster is most prominent for you.</p>
+      <div class="chart-wrap" style="height: 300px;">
+        <canvas id="profile-chart"></canvas>
       </div>
-      <p class="chart-source-note">Part B has no pass/fail cutoff of its own — it contributes to the overall total.</p>
-    </section>
-
-    <section class="chart-section" id="severity-section">
-      <h2>Where your total score sits</h2>
-      <p class="subtitle">The full-scale total (0–72) gives a sense of overall symptom frequency. A total of 40+ falls above roughly the 79th percentile of the general population.</p>
-      <div class="severity-bands" id="severity-bands"></div>
-      <p class="chart-source-note">Total-score context is informational, not a severity diagnosis.</p>
+      <p class="chart-source-note">Inattention spans 9 items, hyperactivity 5, and impulsivity 4 — averages keep them comparable on a 0–4 scale.</p>
     </section>
 
     <section class="compare-section">
-      <h2>What a positive screen does and doesn't mean</h2>
+      <h2>What the self-check can and can't tell you</h2>
       <p class="compare-intro">
-        The Part A screener is built to be cautious: in validation work it correctly flagged about
-        <strong>69%</strong> of people who truly had ADHD (sensitivity) while rarely flagging people
-        who didn't (<strong>99.5%</strong> specificity). In practice that means a positive screen is
-        a strong signal worth acting on, but a negative screen doesn't fully rule ADHD out — if your
-        day-to-day life is affected, it's still reasonable to seek an evaluation.
+        The self-check is a structured reflection based on the DIVA's symptom list — it's good for
+        seeing the shape of your symptoms and for arriving at an appointment with organised notes. But
+        the real DIVA-5 also weighs <strong>childhood onset</strong>, a <strong>lifelong pattern</strong>,
+        impairment across <strong>at least two life domains</strong>, and whether something else
+        explains the symptoms. Those judgements need a clinician.
       </p>
       <p class="selection-hint">
-        Next step after a positive screen: a full assessment with a qualified clinician, which looks
-        at your history, how symptoms affect different areas of life, and other possible explanations.
-        This tool can't and doesn't replace that.
+        Want to go deeper? <a href="walkthrough.html">See a completed DIVA-5 walkthrough</a> for what
+        the full instrument captures, or <a href="images/DIVA_Diagnostic_Interview_for_ADHD.pdf" target="_blank" rel="noopener">download the full interview</a> to take with you.
       </p>
     </section>
   </main>
 
   <footer class="site-footer">
     <div class="container">
-      <p>This site does not host the test or store your answers. Take the official ASRS v1.1 screener at the linked site. Screening is not a diagnosis.</p>
+      <p>This site does not host the test or store your answers. Take the self-check at the linked site. A self-check is not a diagnosis.</p>
     </div>
   </footer>
 

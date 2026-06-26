@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>A Completed DIVA-5 — Example Walkthrough</title>
+  <meta name="description" content="A worked example of a completed DIVA-5: real answers mapped to each criterion, showing the depth of the instrument." />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#f7f5f0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">DIVA&#8209;5 · Adult ADHD</a>
+      <nav class="nav">
+        <a href="index.html" class="nav-link">About</a>
+        <a href="https://www.adhdprep.com/screeners/diva-5" class="nav-link" target="_blank" rel="noopener">Take the Self-Check ↗</a>
+        <a href="results.html" class="nav-link">Interpret My Results</a>
+        <a href="walkthrough.html" class="nav-link active">Example Walkthrough</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container-wide">
+    <div class="results-header">
+      <h1>A Completed DIVA-5</h1>
+      <p>A real, worked example — the site owner's own answers mapped to each criterion. It shows what a quick score can't: the texture of how ADHD-type traits actually show up across a life. This is one person's account, shared as an illustration of the instrument's depth.</p>
+    </div>
+
+    <div class="disclaimer-box">
+      <strong>One person's example, not a template for diagnosis.</strong> Recognising yourself in
+      some of this isn't a diagnosis. The DIVA-5 is meant to be completed with a clinician.
+    </div>
+
+    <section class="score-entry-section" id="summary-section">
+      <h2>Self-check summary</h2>
+      <div class="summary-grid" id="summary-grid"></div>
+      <div class="download-row" style="margin-top:18px;">
+        <a class="download-card" href="images/diva_5_assessment_report_2026-06-26.pdf" target="_blank" rel="noopener">
+          <span class="download-icon">📊</span>
+          <span class="download-text"><strong>Self-check report</strong><span>The full scored report (PDF)</span></span>
+        </a>
+        <a class="download-card" href="images/DIVA_Diagnostic_Interview_for_ADHD_2.pdf" target="_blank" rel="noopener">
+          <span class="download-icon">🗒️</span>
+          <span class="download-text"><strong>Completed interview</strong><span>The full DIVA with written answers (PDF)</span></span>
+        </a>
+      </div>
+    </section>
+
+    <section class="chart-section">
+      <h2>The 18 responses</h2>
+      <p class="subtitle">How each item was rated on the self-check.</p>
+      <div id="responses-table"></div>
+    </section>
+
+    <section class="chart-section">
+      <h2>Criterion-by-criterion, in their own words</h2>
+      <p class="subtitle">This is the part a screener never reaches — concrete, real-life examples for each criterion.</p>
+      <div id="walkthrough-list"></div>
+    </section>
+
+    <section class="compare-section">
+      <p class="selection-hint">
+        Want to do this properly? <a href="images/DIVA_Diagnostic_Interview_for_ADHD.pdf" target="_blank" rel="noopener">Download the blank DIVA-5</a>,
+        or <a href="results.html">interpret your own self-check score</a> first.
+      </p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>An illustrative example shared by the site owner. Not a diagnostic tool. A full assessment requires a qualified clinician.</p>
+    </div>
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="walkthrough-data.js"></script>
+  <script>
+    // Summary cards
+    const pct = Math.round((MY_RESULT.total / THRESHOLDS.totalMax) * 100);
+    document.getElementById('summary-grid').innerHTML = [
+      ['Total score', `${MY_RESULT.total}/72`, `${pct}%`],
+      ['Threshold', `${THRESHOLDS.clinicalThreshold}`, MY_RESULT.total >= THRESHOLDS.clinicalThreshold ? 'Met' : 'Not met'],
+      ['Inattention', MY_RESULT.inattention, 'avg / 4'],
+      ['Hyperactivity', MY_RESULT.hyperactivity, 'avg / 4'],
+      ['Impulsivity', MY_RESULT.impulsivity, 'avg / 4'],
+    ].map(([k, v, s]) => `<div class="summary-cell"><div class="summary-k">${k}</div><div class="summary-v">${v}</div><div class="summary-s">${s}</div></div>`).join('');
+
+    // Responses table grouped by category
+    const byCat = { inattention: [], hyperactivity: [], impulsivity: [] };
+    MY_RESPONSES.forEach((r) => byCat[r.cat].push(r));
+    const catName = { inattention: 'Inattention', hyperactivity: 'Hyperactivity', impulsivity: 'Impulsivity' };
+    const intensity = (a) => RESPONSE_SCALE.indexOf(a); // 0–4
+    document.getElementById('responses-table').innerHTML = Object.keys(byCat).map((cat) => `
+      <div class="resp-group">
+        <div class="resp-group-head">${catName[cat]}</div>
+        ${byCat[cat].map((r) => `
+          <div class="resp-row">
+            <span class="resp-q">${r.q}</span>
+            <span class="resp-a resp-lvl-${intensity(r.a)}">${r.a}</span>
+          </div>`).join('')}
+      </div>`).join('');
+
+    // Walkthrough narrative
+    document.getElementById('walkthrough-list').innerHTML = WALKTHROUGH.map((w) => `
+      <div class="wt-item">
+        <div class="wt-head"><span class="wt-code">${w.code}</span><span class="wt-cat">${w.cat}</span></div>
+        <div class="wt-title">${w.title}</div>
+        ${w.notes.map((n) => `<p class="wt-note">${n}</p>`).join('')}
+      </div>`).join('');
+  </script>
+</body>
+</html>

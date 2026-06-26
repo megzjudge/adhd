@@ -1,40 +1,52 @@
-// Reference thresholds for the Adult ADHD Self-Report Scale (ASRS v1.1).
-// Grounded in the published Harvard/WHO scoring guidance.
+// Reference data for the DIVA-5 self-check (as reported by the adhdprep.com screener).
+// The self-check sums 18 DSM items (Never=0 … Very Often=4) into a total /72,
+// with a clinical threshold of 24, and reports three category averages (0–4).
 
-// ---- Your own result, shown as the default "My Result" comparison ----
-// PLACEHOLDER values — swap in your real Part A and Part B scores.
-// (total is auto-computed as partA + partB; keep it in sync if you set it by hand)
+// ---- Site owner's own result, shown as the default "My Result" comparison ----
 const MY_RESULT = {
   label: 'My Result',
-  partA: 17,   // Part A sum, 0–24  (the part that decides the screen)
-  partB: 31,   // Part B sum, 0–48
-  total: 48,   // Full-scale total, 0–72  (= partA + partB)
+  total: 53,          // /72
+  inattention: 2.89,  // average across the 9 inattention items (0–4)
+  hyperactivity: 2.40,// average across the 5 hyperactivity items (0–4)
+  impulsivity: 3.75,  // average across the 4 impulsivity items (0–4)
   color: '#8b9a6b',
 };
 
 const YOUR_RESULT_COLOR = '#4a6fa5';
 
-// ---- Established screening thresholds ----
+// ---- Self-check scoring ----
 const THRESHOLDS = {
-  partAShadedPositive: 4,   // 4+ shaded-box answers (of 6) = positive screen (paper form)
-  partASumPositive: 14,     // 14+ on the 0–24 Part A sum = positive (2024 Harvard update)
-  partAMax: 24,
-  partBMax: 48,
   totalMax: 72,
-  totalHighMarker: 40,      // 40+ falls above ~79th percentile in the general population
+  clinicalThreshold: 24,   // total >= 24 = above threshold on the self-check
+  categoryMax: 4,          // category averages run 0–4
 };
 
-// ---- Total-score context bands (symptom-frequency context, NOT diagnosis) ----
-// Anchored to the published 79th-percentile marker at 40.
-const TOTAL_BANDS = [
-  { name: 'Low',      min: 0,  max: 23, note: 'Few symptoms reported at clinically notable frequency.' },
-  { name: 'Moderate', min: 24, max: 39, note: 'Some symptoms reported often; below the high-frequency marker.' },
-  { name: 'High',     min: 40, max: 72, note: 'Above the ~79th percentile of the general population.' },
+// ---- Category structure (how the 18 items split) ----
+const CATEGORIES = [
+  { key: 'inattention',  name: 'Inattention',   items: 9, note: 'Items 1–9: attention, focus, organisation, forgetfulness.' },
+  { key: 'hyperactivity',name: 'Hyperactivity', items: 5, note: 'Items 10–14: restlessness, fidgeting, being "on the go".' },
+  { key: 'impulsivity',  name: 'Impulsivity',   items: 4, note: 'Items 15–18: blurting, interrupting, waiting your turn.' },
 ];
 
-// ---- Screener performance (Kessler et al., 2005), for context ----
-const SCREENER_STATS = {
-  sensitivity: 68.7,
-  specificity: 99.5,
-  ppv: 97.4,
-};
+// ---- Owner's 18 self-check responses (for the walkthrough page) ----
+const RESPONSE_SCALE = ['Never', 'Rarely', 'Sometimes', 'Often', 'Very Often'];
+const MY_RESPONSES = [
+  { cat: 'inattention',  q: 'Often fails to give close attention to details / makes careless mistakes', a: 'Often' },
+  { cat: 'inattention',  q: 'Often has difficulty sustaining attention in tasks or activities', a: 'Sometimes' },
+  { cat: 'inattention',  q: 'Often does not seem to listen when spoken to directly', a: 'Sometimes' },
+  { cat: 'inattention',  q: 'Often does not follow through on instructions / fails to finish tasks', a: 'Very Often' },
+  { cat: 'inattention',  q: 'Often has difficulty organising tasks and activities', a: 'Very Often' },
+  { cat: 'inattention',  q: 'Often avoids or is reluctant to engage in sustained mental effort', a: 'Rarely' },
+  { cat: 'inattention',  q: 'Often loses things necessary for tasks or activities', a: 'Very Often' },
+  { cat: 'inattention',  q: 'Often easily distracted by extraneous stimuli', a: 'Often' },
+  { cat: 'inattention',  q: 'Often forgetful in daily activities', a: 'Often' },
+  { cat: 'hyperactivity',q: 'Often fidgets with or taps hands or feet, or squirms in seat', a: 'Sometimes' },
+  { cat: 'hyperactivity',q: 'Often leaves seat when remaining seated is expected', a: 'Sometimes' },
+  { cat: 'hyperactivity',q: 'Often feels restless', a: 'Often' },
+  { cat: 'hyperactivity',q: 'Often has difficulty engaging in leisure activities quietly', a: 'Rarely' },
+  { cat: 'hyperactivity',q: 'Often "on the go", acting as if "driven by a motor"', a: 'Very Often' },
+  { cat: 'impulsivity',  q: 'Often talks excessively', a: 'Very Often' },
+  { cat: 'impulsivity',  q: 'Often blurts out an answer before a question has been completed', a: 'Very Often' },
+  { cat: 'impulsivity',  q: 'Often has difficulty waiting your turn', a: 'Very Often' },
+  { cat: 'impulsivity',  q: 'Often interrupts or intrudes on others', a: 'Often' },
+];
