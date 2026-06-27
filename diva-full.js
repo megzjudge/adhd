@@ -1152,7 +1152,7 @@ const DIVA_FULL = [
    }
   ],
   "childImages": {
-   "caption": "a few Science school report comments from Year 7 as brief examples",
+   "caption": "A few Science school report comments from Year 7 as brief examples",
    "src": [
     "images/School_Report.png",
     "images/School_Report_2.png",
