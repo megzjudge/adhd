@@ -77,7 +77,8 @@ green (Very Often) via `.resp-lvl-0…4` in `styles.css` — high frequency read
 
 `adhd` · `adult-adhd` · `diva-5` · `diva` · `adhd-screening` · `adhd-test` · `dsm-5`
 `mental-health` · `self-assessment` · `inattention` · `hyperactivity` · `impulsivity`
-`static-site` · `cloudflare-pages`
+
+Keywords: adult ADHD test, ADHD self-assessment, DIVA-5, DIVA adult ADHD interview, ADHD screening tool, DSM-5 ADHD criteria, inattentive / hyperactive / impulsive, am I ADHD, ADHD symptoms checklist, free ADHD test.
 
 ---
 
