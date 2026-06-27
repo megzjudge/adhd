@@ -481,8 +481,8 @@ const DIVA_FULL = [
     "sec": "A",
     "paras": [
      "When I worked in china for six months, I locked myself out of the school I believe three times.",
-     "I lose my phone, keys, wallet every now and again. I have obviously strategies on how not to do this.",
-     "Similar to prior, \"I have nothing so can lose nothing\". I carry no bag, because I will inevitably leave it somewhere. I tap my pockets to make sure all 3 have something in it semi-regularly. Etc."
+     "I lose my phone, keys, wallet every now and again. I have obviously developed strategies on how not to do this.",
+     "Similar to prior, \"I have nothing so can lose nothing\". I carry no bag, because I will inevitably leave it somewhere. I tap my pockets to make sure all 3 have something in it when changing locations, etc."
     ]
    },
    {
