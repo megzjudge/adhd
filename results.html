@@ -19,14 +19,14 @@
 </head>
 <body>
   <header class="site-header">
-    <div class="container header-inner">
+    <div class="container-wide header-inner">
       <a href="index.html" class="logo">DIVA&#8209;5 · Adult ADHD</a>
       <nav class="nav">
         <a href="index.html" class="nav-link">About</a>
         <a href="https://www.adhdprep.com/screeners/diva-5" class="nav-link" target="_blank" rel="noopener">Take the Self-Check Online ↗</a>
         <a href="https://www.ohsu.edu/sites/default/files/2022-12/%28DIVA%29%20Diagnostic%20Interview%20for%20ADHD.pdf" class="nav-link" target="_blank" rel="noopener">Full Self-Check PDF ↗</a>
-        <a href="results.html" class="nav-link active">Interpret My Results</a>
-        <a href="walkthrough.html" class="nav-link">Example Walkthrough</a>
+        <a href="results.html" class="nav-link active">Compare Results</a>
+        <a href="walkthrough.html" class="nav-link">My Test Answers</a>
       </nav>
     </div>
   </header>
@@ -78,16 +78,6 @@
     <div class="verdict" id="verdict"></div>
 
     <div class="score-summary">
-      <div class="score-card score-card-my">
-        <div class="label">My Result</div>
-        <div class="score-pair">
-          <div><span class="score-dim">Total</span> <span class="value" id="score-my-total">—</span></div>
-          <div><span class="score-dim">Inatt.</span> <span class="value" id="score-my-inatt">—</span></div>
-          <div><span class="score-dim">Hyper.</span> <span class="value" id="score-my-hyper">—</span></div>
-          <div><span class="score-dim">Impul.</span> <span class="value" id="score-my-impul">—</span></div>
-        </div>
-        <div class="range">Comparison shown on the charts</div>
-      </div>
       <div class="score-card" id="visitor-score-card">
         <div class="label">Your Result</div>
         <div class="score-pair">
@@ -97,6 +87,16 @@
           <div><span class="score-dim">Impul.</span> <span class="value" id="score-visitor-impul">—</span></div>
         </div>
         <div class="range">From your self-check report</div>
+      </div>
+      <div class="score-card score-card-my">
+        <div class="label">My Result</div>
+        <div class="score-pair">
+          <div><span class="score-dim">Total</span> <span class="value" id="score-my-total">—</span></div>
+          <div><span class="score-dim">Inatt.</span> <span class="value" id="score-my-inatt">—</span></div>
+          <div><span class="score-dim">Hyper.</span> <span class="value" id="score-my-hyper">—</span></div>
+          <div><span class="score-dim">Impul.</span> <span class="value" id="score-my-impul">—</span></div>
+        </div>
+        <div class="range">Comparison shown on the charts</div>
       </div>
     </div>
 
@@ -136,8 +136,9 @@
   </main>
 
   <footer class="site-footer">
-    <div class="container">
-      <p>This site does not host the test or store your answers. Take the self-check at the linked site. A self-check is not a diagnosis.</p>
+    <div class="container-wide">
+      <p class="footer-disclaimer">This site explains the DIVA-5 and helps you interpret a self-check score. It is not a diagnostic service and does not collect your responses. A full assessment requires a qualified clinician.</p>
+      <p class="footer-meta">© Megan Judge <span class="dot">·</span> <a href="https://github.com/megzjudge/adhd/" target="_blank" rel="noopener">Github</a> <span class="dot">·</span> 26 Jun 2026</p>
     </div>
   </footer>
 

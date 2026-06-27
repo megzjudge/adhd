@@ -16,7 +16,7 @@
 </head>
 <body>
   <header class="site-header">
-    <div class="container header-inner">
+    <div class="container-wide header-inner">
       <a href="index.html" class="logo">DIVA&#8209;5 · Adult ADHD</a>
       <nav class="nav">
         <a href="index.html" class="nav-link">About</a>
@@ -41,14 +41,10 @@
     <section class="score-entry-section" id="summary-section">
       <h2>Self-check summary</h2>
       <div class="summary-grid" id="summary-grid"></div>
-      <div class="download-row" style="margin-top:18px;">
+      <div class="download-row download-row-center" style="margin-top:18px;">
         <a class="download-card" href="images/DIVA_5_Assessment_Report_2026_06_26.pdf" target="_blank" rel="noopener">
           <span class="download-icon">📊</span>
           <span class="download-text"><strong>Self-check report</strong><span>The full scored report (PDF)</span></span>
-        </a>
-        <a class="download-card" href="images/DIVA_Diagnostic_Interview_for_ADHD_2.pdf" target="_blank" rel="noopener">
-          <span class="download-icon">🗒️</span>
-          <span class="download-text"><strong>Completed interview</strong><span>The full DIVA with written answers (PDF)</span></span>
         </a>
       </div>
     </section>
@@ -60,9 +56,10 @@
     </section>
 
     <section class="chart-section">
-      <h2>Criterion-by-criterion, in their own words</h2>
-      <p class="subtitle">This is the part a screener never reaches — concrete, real-life examples for each criterion.</p>
-      <div id="walkthrough-list"></div>
+      <h2>The full completed interview</h2>
+      <p class="subtitle">Every DIVA-5 criterion — the example boxes I ticked across adulthood and childhood, my written notes, and the Part 3 impairment domains. This is the depth a quick score never reaches.</p>
+      <div class="diva-legend"><span class="tick-chip">✓</span> ticked = recognised / present <span class="legend-sep">·</span> <span class="ac-chip ac-a">A</span> adulthood <span class="legend-sep">·</span> <span class="ac-chip ac-c">C</span> childhood</div>
+      <div id="diva-full"></div>
     </section>
 
     <section class="compare-section">
@@ -74,13 +71,14 @@
   </main>
 
   <footer class="site-footer">
-    <div class="container">
-      <p>An illustrative test example shared by the site owner. A full assessment interpretation for diagnosis requires a qualified clinician.</p>
+    <div class="container-wide">
+      <p class="footer-disclaimer">This site explains the DIVA-5 and helps you interpret a self-check score. It is not a diagnostic service and does not collect your responses. A full assessment requires a qualified clinician.</p>
+      <p class="footer-meta">© Megan Judge <span class="dot">·</span> <a href="https://github.com/megzjudge/adhd/" target="_blank" rel="noopener">Github</a> <span class="dot">·</span> 26 Jun 2026</p>
     </div>
   </footer>
 
   <script src="data.js"></script>
-  <script src="walkthrough-data.js"></script>
+  <script src="diva-full.js"></script>
   <script>
     // Summary cards
     const pct = Math.round((MY_RESULT.total / THRESHOLDS.totalMax) * 100);
@@ -107,13 +105,53 @@
           </div>`).join('')}
       </div>`).join('');
 
-    // Walkthrough narrative
-    document.getElementById('walkthrough-list').innerHTML = WALKTHROUGH.map((w) => `
-      <div class="wt-item">
-        <div class="wt-head"><span class="wt-code">${w.code}</span><span class="wt-cat">${w.cat}</span></div>
-        <div class="wt-title">${w.title}</div>
-        ${w.notes.map((n) => `<p class="wt-note">${n}</p>`).join('')}
-      </div>`).join('');
+    // ---- Full completed DIVA-5 ----
+    const esc = (s) => String(s == null ? '' : s)
+      .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+
+    function renderExamples(list) {
+      if (!list || !list.length) return '<p class="dv-empty">—</p>';
+      return '<ul class="dv-list">' + list.map((it) =>
+        `<li class="${it.c ? 'on' : 'off'}">${it.c ? '<span class="tick">✓</span>' : '<span class="tick-empty"></span>'}${esc(it.t)}</li>`
+      ).join('') + '</ul>';
+    }
+    function renderComments(comments, sec) {
+      return (comments || []).filter((c) => c.sec === sec)
+        .map((c) => `<div class="dv-comment">${esc(c.text)}</div>`).join('');
+    }
+    function renderImages(imgs) {
+      if (!imgs) return '';
+      return `<figure class="dv-figure"><figcaption>${esc(imgs.caption)}</figcaption>` +
+        imgs.src.map((s) => `<img src="${esc(s)}" alt="${esc(imgs.caption)}" loading="lazy" />`).join('') +
+        `</figure>`;
+    }
+
+    document.getElementById('diva-full').innerHTML = DIVA_FULL.map((n) => {
+      if (n.type === 'part') return `<div class="dv-part">${esc(n.title)}</div>`;
+      const isDomain = n.type === 'domain';
+      const head = isDomain
+        ? `<div class="dv-head"><span class="dv-code dv-code-domain">Part 3</span><span class="dv-q">${esc(n.title)}</span></div>`
+        : `<div class="dv-head"><span class="dv-code">${esc(n.code)}</span><span class="dv-q">${esc(n.question)}</span></div>`;
+      const notes = (n.notes && n.notes.length)
+        ? `<div class="dv-notes">${n.notes.map(esc).join(' ')}</div>` : '';
+      return `<div class="dv-item">
+        ${head}
+        <div class="dv-cols">
+          <div class="dv-col">
+            <div class="dv-col-h"><span class="ac-chip ac-a">A</span> Adulthood</div>
+            ${renderExamples(n.adult)}
+            ${renderComments(n.comments, 'A')}
+          </div>
+          <div class="dv-col">
+            <div class="dv-col-h"><span class="ac-chip ac-c">C</span> Childhood</div>
+            ${renderExamples(n.child)}
+            ${renderComments(n.comments, 'C')}
+            ${renderImages(n.childImages)}
+          </div>
+        </div>
+        ${notes}
+      </div>`;
+    }).join('');
   </script>
 </body>
 </html>

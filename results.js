@@ -113,6 +113,7 @@ function renderTotalChart() {
     data: { labels, datasets: [{ label: 'Total', data, backgroundColor: colors, borderRadius: 6, barThickness: 38 }] },
     options: {
       indexAxis: 'y', responsive: true, maintainAspectRatio: false,
+      layout: { padding: { top: 24 } },
       plugins: {
         legend: { display: false },
         thresholdLine: { value: THRESHOLDS.clinicalThreshold, label: `Threshold ${THRESHOLDS.clinicalThreshold}` },
