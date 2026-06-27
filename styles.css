@@ -1007,7 +1007,7 @@ a:hover { color: var(--accent-hover); }
 .hero-emblem {
   width: 150px; height: 150px; margin: 0 auto 22px;
   border-radius: 50%;
-  background: radial-gradient(circle at 50% 38%, #71805d 0%, #66744f 55%, #5c6b4a 100%);
+  background: radial-gradient(circle at 50% 38%, #5b6b45 0%, #4a5739 58%, #3d4a2f 100%);
   display: flex; align-items: center; justify-content: center;
   box-shadow: 0 10px 28px rgba(60,70,40,0.28);
   border: 4px solid var(--surface);
@@ -1144,3 +1144,42 @@ a:hover { color: var(--accent-hover); }
   cursor: pointer; opacity: 0.85;
 }
 .lightbox-close:hover { opacity: 1; }
+
+/* Blurred document teaser (e.g. driving record) */
+.doc-preview {
+  position: relative;
+  width: 100%;
+  height: 150px;
+  margin-top: 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+  /* faux "obscured document" look — faint text-rows on paper, no image needed */
+  background:
+    repeating-linear-gradient(0deg, rgba(90,95,80,0.16) 0 2px, transparent 2px 15px),
+    linear-gradient(135deg, #eef0ea 0%, #dde1d6 100%);
+}
+.doc-preview-bg {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  filter: blur(7px);
+  transform: scale(1.12);   /* hide soft blurred edges */
+}
+.doc-preview-overlay {
+  position: absolute; inset: 0;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center; gap: 12px;
+  background: rgba(30,35,22,0.45);
+  text-align: center; padding: 12px;
+}
+.doc-preview-label {
+  color: #fff; font-weight: 700; font-size: 1.05rem;
+  letter-spacing: 0.03em; text-shadow: 0 1px 4px rgba(0,0,0,0.55);
+}
+.doc-preview-btn {
+  background: var(--surface); color: var(--accent);
+  text-decoration: none; font-weight: 600; font-size: 0.85rem;
+  padding: 7px 16px; border-radius: 99px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+}
+.doc-preview-btn:hover { filter: brightness(1.04); }
