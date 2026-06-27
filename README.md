@@ -7,7 +7,7 @@ score, and publishes a fully worked example of a completed interview.
 
 The test is **not hosted here.** Visitors go off-site to take the self-check, so no responses
 are ever collected, stored, or processed by this site. It is informational only and is **not a
-diagnostic service** — a real assessment requires a qualified clinician.
+diagnostic service** - but directs people to an official PDF and online self-test.
 
 ---
 
