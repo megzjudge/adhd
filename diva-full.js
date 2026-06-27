@@ -254,7 +254,7 @@ const DIVA_FULL = [
     "sec": "C",
     "paras": [
      "My mother says by Grade 2 I was getting in trouble for not completing homework.",
-     "In year six I did no homework the entire year to the sheer fury of my teacher - the school moved me from a disagreeable stern teacher into a softer amiable teacher whom I walked all over the entire year unfortunately for her. I needed the disagreeable teacher and remember her fondly even though I only had a few weeks (she wrote a and lot on either side of the board and I never forgot they were two separate words), even though the first class was a lower intellect class level."
+     "In year six I did no homework the entire year to the sheer fury of my teacher - the school moved me from a disagreeable stern teacher into a softer amiable teacher whom I walked all over the entire year unfortunately for her. I needed the disagreeable teacher and remember her fondly even though I only had her a few weeks (she wrote a and lot on either side of the board and I never forgot they were two separate words), even though the first class was a lower intellect class level it had more ASPD-like students and a stern teacher - but I got bumped up to the other class to fill numbers."
     
     ]
    }
