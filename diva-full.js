@@ -743,10 +743,7 @@ const DIVA_FULL = [
     "c": true
    }
   ],
-  "comments": 
-   [
-   "I broke my arm trying to impress a girl I was competing with, getting off a horse that was standing still (had come to a stop). I decided one day outside the science labs with my friends at lunchtime, that I thought I could do a backflip and landed flat on my back (luckily unhurt from my bravado), as some examples. I am intensely aware of the risks to this portion of my personality and have spent many years curbing my enthusiasm - I often enlongate out the easy learning of new hobbies or job skills to slow down my ability to peacock around my knowledge and get myself ostracised or physically endangered. Ie, I overcomplicate and do very hard \"end game\" things in a new job/hobby first to buffer my self-confidence so that if I do act cocky, its more valid and I can then control the situation if it gets out of hand due to my lack of attentiveness."
-   ],
+  "comments": [],
   "notes": []
  },
  {
@@ -798,7 +795,7 @@ const DIVA_FULL = [
     "sec": "C",
     "paras": [
      "I broke my arm trying to impress a girl I was competing with, getting off a horse that was standing still (had come to a stop). I decided one day outside the science labs with my friends at lunchtime, that I thought I could do a backflip and landed flat on my back (luckily unhurt from my bravado), as some examples.",
-     "I am intensely aware of the risks to this portion of my personality and have spent many years curbing my enthusiasm - I often enlongate out the easy learning of new hobbies or job skills to slow down my ability to peacock around my knowledge and get myself ostracised or physically endangered. Ie, I overcomplicate and do very hard \"end game\" things in a new job/hobby first to buffer my self-confidence so that if I do act cocky, its more valid and I can then control the situation if it gets out of hand due to my lack of attentiveness."
+     "I am intensely aware of the risks intertwined in this portion of my personality and have spent many years curbing my enthusiasm - I often enlongate out the easy learning of new hobbies or job skills to slow down my ability to peacock around my knowledge and get myself ostracised or physically endangered. Ie, I overcomplicate and do very hard \"end game\" things in a new job/hobby first to buffer my self-confidence so that if I do act cocky, its more valid and I can then control the situation if it gets out of hand due to my lack of attentiveness."
     ]
    }
   ],
