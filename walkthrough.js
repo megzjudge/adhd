@@ -3,6 +3,7 @@
 const pct = Math.round((MY_RESULT.total / THRESHOLDS.totalMax) * 100);
 document.getElementById('summary-grid').innerHTML = [
   ['Total score', `${MY_RESULT.total}/72`, `${pct}%`],
+  ['Status', `${pct}%`, MY_RESULT.total >= THRESHOLDS.clinicalThreshold ? 'Above threshold' : 'Below threshold'],
   ['Threshold', `${THRESHOLDS.clinicalThreshold}`, MY_RESULT.total >= THRESHOLDS.clinicalThreshold ? 'Met' : 'Not met'],
   ['Inattention', MY_RESULT.inattention, 'avg / 4'],
   ['Hyperactivity', MY_RESULT.hyperactivity, 'avg / 4'],
@@ -65,7 +66,8 @@ function renderComments(comments, sec) {
       const paras = Array.isArray(c.paras) ? c.paras : String(c.text || '').split(/\n+/);
       const imgs = c.images || c.childImages;   // images can be attached to a comment
       return `<div class="dv-comment">${paras.map((p) => `<p>${richText(p)}</p>`).join('')}</div>`
-        + (imgs ? renderImages(imgs) : '');
+        + (imgs ? renderImages(imgs) : '')
+        + (c.preview ? renderPreview(c.preview) : '');
     }).join('');
 }
 function renderImages(imgs) {
@@ -73,6 +75,18 @@ function renderImages(imgs) {
   return `<figure class="dv-figure"><figcaption>${esc(imgs.caption)}</figcaption>` +
     imgs.src.map((s) => `<img class="dv-lightbox-img" src="${esc(s)}" alt="${esc(imgs.caption)}" loading="lazy" />`).join('') +
     `</figure>`;
+}
+// Blurred rectangular teaser for a sensitive document: label + button to the PDF.
+function renderPreview(p) {
+  if (!p || !p.pdf) return '';
+  const label = esc(p.label || 'Document');
+  const bg = p.image ? `<img class="doc-preview-bg" src="${esc(p.image)}" alt="" loading="lazy" />` : '';
+  return `<div class="doc-preview">${bg}
+    <div class="doc-preview-overlay">
+      <span class="doc-preview-label">${label}</span>
+      <a class="doc-preview-btn" href="${esc(p.pdf)}" target="_blank" rel="noopener">View ${label} ↗</a>
+    </div>
+  </div>`;
 }
 
 document.getElementById('diva-full').innerHTML = DIVA_FULL.map((n) => {
