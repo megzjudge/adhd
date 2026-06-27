@@ -70,8 +70,6 @@ Fonts: Source Serif 4 + Source Sans 3.
 
 ## Disclaimer
 
-This site is for information and reflection only. The online self-check is a screening aid based
-on the DIVA-5 symptom list — **it is not a diagnosis**, and a positive result means "worth
-following up," not "confirmed." A full diagnostic interpretation should be carried out by a qualified
+A positive result means "worth following up," not "confirmed" for ADHD. A full diagnostic interpretation should be carried out by a qualified
 clinician to interpret your results. The DIVA-5 is a publication of the **DIVA Foundation, The Hague**; this site is not
-affiliated with the DIVA Foundation and does not save any responses.
+affiliated with the DIVA Foundation and does not save any responses locally anywhere.
