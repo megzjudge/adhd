@@ -49,9 +49,6 @@ is what a clinician actually uses.
     ├── icon.png                                  # rabbit favicon + hero emblem
     ├── DIVA_Diagnostic_Interview_for_ADHD.pdf    # blank full interview (download)
     ├── DIVA_5_Assessment_Report_2026_06_26.pdf   # owner's self-check report (download)
-    ├── School_Report.png                         # Year-7 science report scans
-    ├── School_Report_2.png                       #   embedded in Part 3 → Work & Education
-    └── School_Report_3.png                        #   (childhood education evidence)
 ```
 
 External runtime dependency: **Chart.js 4.4.1** (loaded from jsDelivr CDN) on `results.html` only.
