@@ -32,10 +32,21 @@ const esc = (s) => String(s == null ? '' : s)
 // comment paragraphs: <a href="…">, <br>, <strong>/<em>/<b>/<i>.
 function richText(s) {
   let out = esc(s);
+  // markdown-style links: [text](https://url)  — the easiest, quote-free form
+  out = out.replace(/\[([^\]]+)\]\((https?:\/\/[^\s)]+)\)/g,
+    (m, txt, href) => `<a href="${href}" target="_blank" rel="noopener">${txt}</a>`);
+  // shorthand: <https://url>text</a>  (missing the "a href=")
+  out = out.replace(/&lt;(https?:\/\/[^\s&]+)&gt;([\s\S]*?)&lt;\/a&gt;/gi,
+    (m, href, txt) => `<a href="${href}" target="_blank" rel="noopener">${txt}</a>`);
+  // escaped-quote href: <a href="https://url">  (quotes were written as \" in the data)
   out = out.replace(/&lt;a\s+href=&quot;(.*?)&quot;.*?&gt;/gi,
-          (m, href) => `<a href="${href}" target="_blank" rel="noopener">`)
-    .replace(/&lt;\/a&gt;/gi, '</a>')
-    .replace(/&lt;br\s*\/?&gt;/gi, '<br>');
+    (m, href) => `<a href="${href}" target="_blank" rel="noopener">`);
+  // unquoted href: <a href=https://url>  (recommended inside the JS strings)
+  out = out.replace(/&lt;a\s+href=([^\s&]+)\s*&gt;/gi,
+    (m, href) => `<a href="${href}" target="_blank" rel="noopener">`);
+  // remaining close tags + simple inline tags
+  out = out.replace(/&lt;\/a&gt;/gi, '</a>')
+           .replace(/&lt;br\s*\/?&gt;/gi, '<br>');
   ['strong','em','b','i'].forEach((t) => {
     out = out.replace(new RegExp('&lt;(/?)' + t + '&gt;', 'gi'), '<$1' + t + '>');
   });
@@ -52,7 +63,9 @@ function renderComments(comments, sec) {
   return (comments || []).filter((c) => c.sec === sec)
     .map((c) => {
       const paras = Array.isArray(c.paras) ? c.paras : String(c.text || '').split(/\n+/);
-      return `<div class="dv-comment">${paras.map((p) => `<p>${richText(p)}</p>`).join('')}</div>`;
+      const imgs = c.images || c.childImages;   // images can be attached to a comment
+      return `<div class="dv-comment">${paras.map((p) => `<p>${richText(p)}</p>`).join('')}</div>`
+        + (imgs ? renderImages(imgs) : '');
     }).join('');
 }
 function renderImages(imgs) {
