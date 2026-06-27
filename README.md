@@ -1,4 +1,4 @@
-# Diagnostic Interview for ADHD in Adults (DIVA-5)
+# DIVA-5 · Adult ADHD
 
 A small, static, three-page website about the **DIVA-5 (Diagnostic Interview for ADHD in
 Adults)** — the most in-depth adult ADHD instrument in wide use. The site explains the
@@ -7,7 +7,9 @@ score, and publishes a fully worked example of a completed interview.
 
 The test is **not hosted here.** Visitors go off-site to take the self-check, so no responses
 are ever collected, stored, or processed by this site. It is informational only and is **not a
-diagnostic service** - but directs people to an official PDF and online self-test.
+diagnostic service** — a real assessment requires a qualified clinician.
+
+🐰 Built and maintained by **Megan Judge** · deployed on Cloudflare Pages.
 
 ---
 
@@ -51,25 +53,11 @@ is what a clinician actually uses.
     ├── icon.png                                  # rabbit favicon + hero emblem
     ├── DIVA_Diagnostic_Interview_for_ADHD.pdf    # blank full interview (download)
     ├── DIVA_5_Assessment_Report_2026_06_26.pdf   # owner's self-check report (download)
+
 ```
 
 External runtime dependency: **Chart.js 4.4.1** (loaded from jsDelivr CDN) on `results.html` only.
-
 Fonts: Source Serif 4 + Source Sans 3 (Google Fonts).
-
----
-
-The 18 self-check answers shown on the walkthrough live in `MY_RESPONSES` in the same file.
-
-**Regenerating the full interview (`diva-full.js`).** The spreadsheet layout is: column
-A = section/part header, B = criterion letter, C = code or `A`/`C`,
-D = row type (`Overall Question` / `Sub-Question` / `Comment`), E = `x` tick marker, F = text.
-Re-export and re-run the parser to rebuild `diva-full.js` (the build script reads the `.ods`,
-skips empty "Other" rows, attaches comments to their A/C section, and wires the Year-7 school
-reports into the Work-and-Education childhood block).
-
-**Response colours.** The 18-response chips run from red (Rarely) through amber (Sometimes) to
-green (Very Often) via `.resp-lvl-0…4` in `styles.css` — high frequency reads as "present."
 
 ---
 
@@ -90,3 +78,5 @@ on the DIVA-5 symptom list — **it is not a diagnosis**, and a positive result 
 following up," not "confirmed." A full diagnostic assessment must be carried out by a qualified
 clinician. The DIVA-5 is a publication of the **DIVA Foundation, The Hague**; this site is not
 affiliated with the DIVA Foundation and does not host the interview or collect responses.
+
+© Megan Judge · <https://github.com/megzjudge/adhd/> · 26 Jun 2026
