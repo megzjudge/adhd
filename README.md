@@ -72,8 +72,6 @@ Fonts: Source Serif 4 + Source Sans 3 (Google Fonts).
 
 This site is for information and reflection only. The online self-check is a screening aid based
 on the DIVA-5 symptom list — **it is not a diagnosis**, and a positive result means "worth
-following up," not "confirmed." A full diagnostic assessment must be carried out by a qualified
-clinician. The DIVA-5 is a publication of the **DIVA Foundation, The Hague**; this site is not
-affiliated with the DIVA Foundation and does not host the interview or collect responses.
-
-© Megan Judge · <https://github.com/megzjudge/adhd/> · 26 Jun 2026
+following up," not "confirmed." A full diagnostic interpretation should be carried out by a qualified
+clinician to interpret your results. The DIVA-5 is a publication of the **DIVA Foundation, The Hague**; this site is not
+affiliated with the DIVA Foundation and does not save any responses.
