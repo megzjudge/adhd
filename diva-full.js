@@ -989,7 +989,7 @@ const DIVA_FULL = [
   "comments": [
    {
     "sec": "A",
-    "text": "Its not the queue itself often, its the precognition of the queue, the anticipitory boredom rather than in the moment. If I get stuck in traffic once in a while I don't care, if its daily, it becomes problematic for me. I can distract myself for a day, lul myself into imagination, but... everyday, I get intense frustration."
+    "text": "Its not the queue itself often, its the precognition of the queue, the anticipitory boredom rather than in the moment. If I get stuck in traffic once in a while I don't care, if its daily, it becomes problematic for me. I can distract myself for a day, lul myself into imagination, but... if there is predicted regularity, I get intense frustration."
    }
   ],
   "notes": []
