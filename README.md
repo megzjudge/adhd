@@ -61,8 +61,8 @@ Fonts: Source Serif 4 + Source Sans 3 (Google Fonts).
 
 The 18 self-check answers shown on the walkthrough live in `MY_RESPONSES` in the same file.
 
-**Regenerating the full interview (`diva-full.js`).** It's generated from `ADHD.ods`. The
-spreadsheet layout is: column A = section/part header, B = criterion letter, C = code or `A`/`C`,
+**Regenerating the full interview (`diva-full.js`).** The spreadsheet layout is: column
+A = section/part header, B = criterion letter, C = code or `A`/`C`,
 D = row type (`Overall Question` / `Sub-Question` / `Comment`), E = `x` tick marker, F = text.
 Re-export and re-run the parser to rebuild `diva-full.js` (the build script reads the `.ods`,
 skips empty "Other" rows, attaches comments to their A/C section, and wires the Year-7 school
