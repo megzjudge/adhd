@@ -1434,8 +1434,8 @@ const DIVA_FULL = [
      "preview": {
       "label": "Driving Record",
       "pdf": "images/Driving_Record.pdf"
-     }
-    }
+     },
+    },
    },
    {
     "sec": "C",
