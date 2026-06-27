@@ -109,6 +109,20 @@
     const esc = (s) => String(s == null ? '' : s)
       .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
 
+    // Escape everything, then re-enable a small whitelist of inline tags inside
+    // comment paragraphs: <a href="…">, <br>, <strong>/<em>/<b>/<i>.
+    function richText(s) {
+      let out = esc(s);
+      out = out.replace(/&lt;a\s+href=&quot;(.*?)&quot;.*?&gt;/gi,
+              (m, href) => `<a href="${href}" target="_blank" rel="noopener">`)
+        .replace(/&lt;\/a&gt;/gi, '</a>')
+        .replace(/&lt;br\s*\/?&gt;/gi, '<br>');
+      ['strong','em','b','i'].forEach((t) => {
+        out = out.replace(new RegExp('&lt;(/?)' + t + '&gt;', 'gi'), '<$1' + t + '>');
+      });
+      return out;
+    }
+
     function renderExamples(list) {
       if (!list || !list.length) return '<p class="dv-empty">—</p>';
       return '<ul class="dv-list">' + list.map((it) =>
@@ -117,12 +131,15 @@
     }
     function renderComments(comments, sec) {
       return (comments || []).filter((c) => c.sec === sec)
-        .map((c) => `<div class="dv-comment">${esc(c.text)}</div>`).join('');
+        .map((c) => {
+          const paras = Array.isArray(c.paras) ? c.paras : String(c.text || '').split(/\n+/);
+          return `<div class="dv-comment">${paras.map((p) => `<p>${richText(p)}</p>`).join('')}</div>`;
+        }).join('');
     }
     function renderImages(imgs) {
       if (!imgs) return '';
       return `<figure class="dv-figure"><figcaption>${esc(imgs.caption)}</figcaption>` +
-        imgs.src.map((s) => `<img src="${esc(s)}" alt="${esc(imgs.caption)}" loading="lazy" />`).join('') +
+        imgs.src.map((s) => `<img class="dv-lightbox-img" src="${esc(s)}" alt="${esc(imgs.caption)}" loading="lazy" />`).join('') +
         `</figure>`;
     }
 
@@ -152,6 +169,23 @@
         ${notes}
       </div>`;
     }).join('');
+
+    // ---- Lightbox for embedded images ----
+    (function () {
+      const lb = document.createElement('div');
+      lb.className = 'lightbox';
+      lb.innerHTML = '<button class="lightbox-close" aria-label="Close">&times;</button><img alt="" />';
+      document.body.appendChild(lb);
+      const lbImg = lb.querySelector('img');
+      function open(src, alt) { lbImg.src = src; lbImg.alt = alt || ''; lb.classList.add('open'); document.body.style.overflow = 'hidden'; }
+      function close() { lb.classList.remove('open'); document.body.style.overflow = ''; lbImg.src = ''; }
+      document.addEventListener('click', (e) => {
+        const t = e.target;
+        if (t.classList && t.classList.contains('dv-lightbox-img')) { open(t.src, t.alt); }
+        else if (t === lb || (t.classList && t.classList.contains('lightbox-close'))) { close(); }
+      });
+      document.addEventListener('keydown', (e) => { if (e.key === 'Escape') close(); });
+    })();
   </script>
 </body>
 </html>
