@@ -73,6 +73,14 @@ green (Very Often) via `.resp-lvl-0…4` in `styles.css` — high frequency read
 
 ---
 
+## Repo topics / tags
+
+`adhd` · `adult-adhd` · `diva-5` · `diva` · `adhd-screening` · `adhd-test` · `dsm-5`
+`mental-health` · `self-assessment` · `inattention` · `hyperactivity` · `impulsivity`
+`static-site` · `cloudflare-pages`
+
+---
+
 ## Disclaimer
 
 This site is for information and reflection only. The online self-check is a screening aid based
