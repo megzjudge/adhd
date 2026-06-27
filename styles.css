@@ -1024,7 +1024,7 @@ a:hover { color: var(--accent-hover); }
 
 /* Centered single download */
 .download-row-center { display: flex; justify-content: center; }
-.download-row-center .download-card { width: 360px; max-width: 100%; }
+.download-row-center .download-card { width: 100%; max-width: 360px; }
 
 /* Recolour the 18 responses: Very Often = green (success) … Rarely = red */
 .resp-lvl-0 { background: #eceae6; color: #8a8a8a; }   /* Never */
@@ -1106,19 +1106,21 @@ a:hover { color: var(--accent-hover); }
 
 /* ===== batch 4 additions ===== */
 
-/* Self-check summary box colours: Total = base, Threshold = green, categories = blue */
-.summary-grid .summary-cell:nth-child(2) {      /* Threshold */
+/* Self-check summary box colours: Total = base, Status + Threshold = green, categories = blue */
+.summary-grid .summary-cell:nth-child(2),
+.summary-grid .summary-cell:nth-child(3) {      /* Status + Threshold */
   background: #e8f2e7; border-color: #9cc69a;
 }
-.summary-grid .summary-cell:nth-child(2) .summary-v { color: #2f7d33; }
-.summary-grid .summary-cell:nth-child(3),
+.summary-grid .summary-cell:nth-child(2) .summary-v,
+.summary-grid .summary-cell:nth-child(3) .summary-v { color: #2f7d33; }
 .summary-grid .summary-cell:nth-child(4),
-.summary-grid .summary-cell:nth-child(5) {      /* Inattention / Hyperactivity / Impulsivity */
+.summary-grid .summary-cell:nth-child(5),
+.summary-grid .summary-cell:nth-child(6) {      /* Inattention / Hyperactivity / Impulsivity */
   background: #e9eef6; border-color: #9fb2d2;
 }
-.summary-grid .summary-cell:nth-child(3) .summary-v,
 .summary-grid .summary-cell:nth-child(4) .summary-v,
-.summary-grid .summary-cell:nth-child(5) .summary-v { color: #3c5a86; }
+.summary-grid .summary-cell:nth-child(5) .summary-v,
+.summary-grid .summary-cell:nth-child(6) .summary-v { color: #3c5a86; }
 
 /* Multi-paragraph comments */
 .dv-comment p { margin: 0 0 9px; }
