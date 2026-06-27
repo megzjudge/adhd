@@ -873,7 +873,7 @@ const DIVA_FULL = [
   "comments": [
    {
     "sec": "A",
-    "text": "The issue is not, like other assertive people will always interject, its slowing down for those less assertive to find the courage to interject. I am generally pretty observant of other people's discomfort, and try to push them to be more comfident to interject in conversation with me - by showing I get more exciteable when they give their opinion, etc - give positive feedback. It's very hard for me to remember to ask them, both my parents are big talkers so I was raised in an environment that, \"you speak when you want to\", its hard for me to remember other people don't but eventually I do acknowledge and ask their opinion if they don't have the courage to do so."
+    "text": "The issue is not, like other assertive people will always interject, its slowing down for those less assertive to find the courage to interject. I am generally pretty observant of other people's discomfort, and try to push them to be more confident to interject in conversation with me - by showing I get more exciteable when they give their opinion, etc - give positive feedback. It's very hard for me to remember to ask them, both my parents are big talkers so I was raised in an environment that, \"you speak when you want to\", its hard for me to remember other people don't but eventually I do acknowledge and ask their opinion if they don't have the courage to do so."
    }
   ],
   "notes": []
