@@ -9,8 +9,6 @@ The test is **not hosted here.** Visitors go off-site to take the self-check, so
 are ever collected, stored, or processed by this site. It is informational only and is **not a
 diagnostic service** — a real assessment requires a qualified clinician.
 
-🐰 Built and maintained by **Megan Judge** · deployed on Cloudflare Pages.
-
 ---
 
 ## Pages
