@@ -488,7 +488,7 @@ const DIVA_FULL = [
    {
     "sec": "C",
     "paras": [
-     "Generally speaking, I can find where I've left something by recounting my physical actions in my head and I've always had good mental recall I guess. But I do have the \"where did i put that\" much more than the average person and people having to go back with me to find the thing I've left behind in the classroom, or in the cafe, or in the bathroom, etc. The headphones I've dropped on the floor, etc."
+     "Generally speaking, I can find where I've left something by recounting my physical actions in my head and I've always had good mental recall I guess. But I do have the \"where did I put that\" goofball brained-dead moments where I have to giggle about it much more than the average person I guess, and people having to go back with me to find the thing I've left behind in the classroom, or in the cafe, or in the bathroom, etc. The headphones I've dropped on the floor, etc."
     ]
    }
   ],
