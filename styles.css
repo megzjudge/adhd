@@ -1016,7 +1016,7 @@ a:hover { color: var(--accent-hover); }
 @media (max-width: 640px) { .hero-emblem { width: 120px; height: 120px; } }
 
 /* Footer */
-.footer-disclaimer { max-width: 760px; }
+.footer-disclaimer { max-width: 760px; margin: 0 auto; }
 .footer-meta { margin-top: 22px; font-size: 0.85rem; color: var(--muted); }
 .footer-meta a { color: var(--muted); text-decoration: underline; }
 .footer-meta a:hover { color: var(--accent); }
