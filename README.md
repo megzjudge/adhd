@@ -65,11 +65,3 @@ Fonts: Source Serif 4 + Source Sans 3.
 `adult ADHD test` · `ADHD self-assessment` · `DIVA-5` · `DIVA adult ADHD interview` · 
 `ADHD screening tool` · `DSM-5 ADHD criteria` · `inattentive` · `hyperactive` · `impulsive`,
 `am I ADHD` · `ADHD symptoms checklist` · `free ADHD test`.
-
----
-
-## Disclaimer
-
-A positive result means "worth following up," not "confirmed" for ADHD. A full diagnostic interpretation should be carried out by a qualified
-clinician to interpret your results. The DIVA-5 is a publication of the **DIVA Foundation, The Hague**; this site is not
-affiliated with the DIVA Foundation and does not save any responses locally anywhere.
