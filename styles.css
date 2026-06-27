@@ -962,7 +962,7 @@ a:hover { color: var(--accent-hover); }
 .download-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 22px 0 8px; }
 @media (max-width: 640px) { .download-row { grid-template-columns: 1fr; } }
 .download-card {
-  display: flex; align-items: center; gap: 14px;
+  align-items: center; gap: 14px;
   padding: 16px 18px; border: 1px solid var(--border); border-radius: var(--radius);
   background: var(--surface); text-decoration: none; color: var(--text);
   box-shadow: var(--shadow); transition: transform 0.12s, border-color 0.12s;
