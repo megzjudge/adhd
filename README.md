@@ -54,7 +54,7 @@ is what a clinician actually uses.
 ```
 
 External runtime dependency: **Chart.js 4.4.1** (loaded from jsDelivr CDN) on `results.html` only.
-Fonts: Source Serif 4 + Source Sans 3 (Google Fonts).
+Fonts: Source Serif 4 + Source Sans 3.
 
 ---
 
