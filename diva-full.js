@@ -1336,7 +1336,7 @@ const DIVA_FULL = [
     "sec": "C",
     "paras": [
      "I am super gregarious, people were never my issue.",
-     "So assertive in fact that I had about 150 people to my 18th birthday party from multiple social circles (work group, school group, bunch of nerds a few years older, large goth social circle from the city from early online social networking websites, etc).",
+     "So assertive in fact that I had about 150 people at my 18th birthday party from multiple social circles (besides just mother-father-brother I had my supermarket work group, school group, bunch of nerds a few years older, large goth social circle from the city from early online social networking websites, etc).",
      "I feel I burnt out on sociability quite young and so get bored at the repetitiveness of social activities now due to boredom, my brain thinks, \"I could be at home coding, watching a podcast, playing a game, having sex, etc\"."
     ]
    }
