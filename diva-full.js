@@ -1027,7 +1027,7 @@ const DIVA_FULL = [
    {
     "sec": "A",
     "paras": [
-     "Its not the queue itself often, its the precognition of the queue, the anticipitory boredom rather than in the moment. If I get stuck in traffic once in a while I don't care, if its daily, it becomes problematic for me. I can distract myself for a day, lul myself into imagination, but... I repetitiveness gives me intense frustration (when trying to word exactly what it is, I couldnt, I'll think on it cause my head filled with 30 variables)."
+     "Its not the queue itself often, its the precognition of the queue, the anticipitory boredom rather than in the moment. If I get stuck in traffic once in a while I don't care, if its daily, it becomes problematic for me. I can distract myself for a day, lul myself into imagination, but... repetitiveness gives me intense frustration (when trying to word exactly what it is, I couldnt, I'll think on it cause my head filled with 30 variables)."
     ]
    }
   ],
@@ -1085,7 +1085,7 @@ const DIVA_FULL = [
    {
     "sec": "A",
     "paras": [
-     "Am actually an avid people watcher beccause I want new novel information - so I want them to do something, so I can observe it - more often than I want to outshine them. I don't care about my own Self, low safety, etc, often I am just far more interested in the collection of data. It is hard if you perceive them to make a fault before they make a fault - but I still often don't intervene because every human, myself included, can categorically see all their own faults. I don't care about physical reality enough to take over their lives. I like to watch and see how things play out - so I can mimic their knowledge if I see fit. Very often people have a smarter way of solving a problem they create than I would have comprehended. I have a \"break it and fix it\" mind myself, a highly systematic brain, I like to see other peoples fixing systems too."
+     "Am actually an avid people watcher because I want new novel information - so I want them to do something, so I can observe it - more often than I want to outshine them. I don't care about my own Self, low safety, etc, often I am just far more interested in the collection of data. It is hard if you perceive them to make a fault before they make a fault - but I still often don't intervene because every human, myself included, can categorically see all their own faults. I don't care about physical reality enough to take over their lives. I like to watch and see how things play out - so I can mimic their knowledge if I see fit. Very often people have a smarter way of solving a problem they create than I would have comprehended void of personal experience. I have a \"break it and fix it\" mind myself, a highly systematic brain, I like to see other peoples \"fixing systems\" too."
     ]
    }
   ],
