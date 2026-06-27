@@ -968,7 +968,8 @@ const DIVA_FULL = [
    {
     "sec": "C",
     "paras": [
-     "Prior to year 3, yes; after year 3, no. I was a teachers pet until year 4, after year 3 I seem to have deviated into being a deviant more than a teachers pet."
+     "Prior to year 3, yes; after year 3, no.",
+     "I was a teachers pet until year 4, after year 3 I seem to have deviated into being a deviant more than a teachers pet."
     ]
    }
   ],
