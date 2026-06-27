@@ -1,4 +1,4 @@
-## Diagnostic Interview for ADHD in Adults (DIVA-5) Website
+# Diagnostic Interview for ADHD in Adults (DIVA-5) Website
 
 A small, static, three-page website about the **DIVA-5 (Diagnostic Interview for ADHD in
 Adults)** — the most in-depth adult ADHD instrument in wide use. The site explains the
