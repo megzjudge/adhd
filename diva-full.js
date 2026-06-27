@@ -1430,13 +1430,12 @@ const DIVA_FULL = [
     "sec": "A",
     "paras": [
      "This is actually hard, mostly all these things happened before the age of 19, and resolved by 25ish when I forced myself into a more introverted existance. I lost my licence 3 times during my Ps.",
-     "In terms of relaxation, I can relax very well, it's that there is a lack of orderliness to when to relax. Place me in a museum and I am the calmest bird to have ever flown - but when there is stimuli around me, I buzz."
-    ],
-    "childImages": {
-     "caption": "Licence history (as of 2025):",
-     "src": [
-      "images/Licence_History_2025.png"
-     ]
+     "In terms of relaxation, I can relax very well, it's that there is a lack of orderliness to when to relax. Place me in a museum and I am the calmest bird to have ever flown - but when there is stimuli around me, I buzz.",
+     "preview": {
+      "image": "images/Driving_Record.png",
+      "label": "Driving Record",
+      "pdf": "images/Driving_Record.pdf"
+     }
     }
    },
    {
